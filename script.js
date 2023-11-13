@@ -2,7 +2,6 @@
 
 const passwordInput = document.getElementById('passwordInput');
 const submitButton = document.getElementById('submitButton');
-const errorMessage = document.getElementById('errorMessage');
 
 submitButton.addEventListener('click', function() {
     const password = passwordInput.value;
@@ -12,7 +11,12 @@ submitButton.addEventListener('click', function() {
         // Redirige a la sección secreta
         window.location.href = 'seccion_secreta.html';
     } else {
-        // Muestra la ventana emergente con el GIF
-        errorMessage.style.display = 'block';
+        // Abre una nueva ventana con el GIF
+        const popupWindow = window.open('ahahah.gif', '_blank', 'width=300,height=200');
+
+        // Cierra la ventana emergente después de un tiempo (opcional)
+        setTimeout(function() {
+            popupWindow.close();
+        }, 5000); // Cambia 5000 a la cantidad de milisegundos que deseas que la ventana se mantenga abierta
     }
 });
